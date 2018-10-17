@@ -1,4 +1,4 @@
-#Tue Oct 16 17:58:26 MDT 2018
-base.0=/Users/kevinzhang/Desktop/lonelyTwitter/app/build/intermediates/transforms/dexMerger/androidTest/debug/0
+#Tue Oct 16 19:31:19 MDT 2018
+base.0=/afs/ualberta.ca/home/j/j/jjlee3/Desktop/lonelyTwitter/app/build/intermediates/transforms/dexMerger/androidTest/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

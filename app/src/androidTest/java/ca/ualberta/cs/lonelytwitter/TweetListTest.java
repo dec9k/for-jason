@@ -2,6 +2,8 @@ package ca.ualberta.cs.lonelytwitter;
 
 import android.test.ActivityInstrumentationTestCase2;
 
+import java.util.ArrayList;
+
 public class TweetListTest extends ActivityInstrumentationTestCase2<LonelyTwitterActivity>{
 
     public TweetListTest() {
@@ -50,6 +52,31 @@ public class TweetListTest extends ActivityInstrumentationTestCase2<LonelyTwitte
         tweetList.delete(tweet);
 
         assertFalse(tweetList.hasTweet(tweet));
+    }
+
+    public void testGetTweets() {
+        TweetList tweetList = new TweetList();
+        Tweet tweet1 = new NormalTweet("first tweet");
+        tweetList.add(tweet1);
+        Tweet tweet2 = new NormalTweet("second tweet");
+        tweetList.add(tweet2);
+        ArrayList<Tweet> retrievedTweet = tweetList.getTweets();
+        Tweet firstTweet = retrievedTweet.get(0);
+        Tweet secondTweet = retrievedTweet.get(1);
+
+        assertEquals(firstTweet.getMessage(), tweet1.getMessage());
+        assertEquals(firstTweet.getDate(), tweet1.getDate());
+
+        assertEquals(secondTweet.getMessage(), tweet2.getMessage());
+        assertEquals(secondTweet.getDate(), tweet2.getDate());
+    }
+
+    public void testGetCount(){
+        TweetList tweetList = new TweetList();
+        Tweet tweet = new NormalTweet("Tweet");
+        tweetList.add(tweet);
+
+        assertEquals(tweetList.getCount(), 1);
     }
 
 }
